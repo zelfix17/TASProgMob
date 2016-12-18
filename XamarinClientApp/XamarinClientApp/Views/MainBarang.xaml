@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinClientApp.MainBarang" 
+             Title="List Barang">
+
+  <StackLayout>
+    <ListView x:Name="listBarang" ItemsSource="{Binding ListBarang}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="{Binding IdBarang}"
+                    Detail="{Binding NamaBarang}" DetailColor="Red" />
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinClientApp.Views.MainPageDetail">
+  <ScrollView>
+    <!-- Space --> <StackLayout HeightRequest="30"></StackLayout> 
+     <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+      <!-- Grid - Define Row  -->
+      <Grid.RowDefinitions RowSpacing="0">
+        <RowDefinition Height="200"/><!--LOGO-->
+        <RowDefinition Height="30"/><!--SPACE-->
+        <RowDefinition Height="100"/>
+        <RowDefinition Height="100"/>
+        <RowDefinition Height="100"/>
+        <RowDefinition Height="100"/>
+      </Grid.RowDefinitions>
+      <!-- Grid - Define Column  -->
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="150"/>
+        <ColumnDefinition Width="150"/>
+      </Grid.ColumnDefinitions>
+      <!-- Grid - Body -->
+      <Image Source="RadiantSwordLogo.png" HeightRequest="200"
+              Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+      <Button Text="View" x:Name="btnViewKategori"
+              Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+              FontFamily="Arial" FontAttributes="Bold" FontSize="20"/>
+      <Button Text="Add" x:Name="btnViewBarang"
+              Grid.Row="3" Grid.Column="0"
+              FontFamily="Arial" FontAttributes="Bold" FontSize="20"/>
+      <Button Text="Edit" x:Name="btnViewJenisMotor"
+              Grid.Row="3" Grid.Column="1"
+              FontFamily="Arial" FontAttributes="Bold" FontSize="20"/>
+    </Grid>
+</ScrollView>
+</ContentPage>
