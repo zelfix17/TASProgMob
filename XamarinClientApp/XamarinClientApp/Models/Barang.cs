@@ -11,5 +11,10 @@ namespace XamarinClientApp.Models
     {
         public int IdBarang { get; set; }
         public string NamaBarang { get; set; }
+        public int HargaBarang { get; set; }
+        public int StokBarang { get; set; }
+        public DateTime TglBeli { get; set; }
+        public int IdKategori { get; set; }
+        public int IdJenisMotor { get; set; }
     }
 }

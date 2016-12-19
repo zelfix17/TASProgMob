@@ -9,42 +9,42 @@ using XamarinClientApp.Models;
 using RestSharp.Portable;
 using RestSharp.Portable.HttpClient;
 
-namespace XamarinClientApp
+
+namespace XamarinClientApp.Views
 {
-    public partial class Category_Add : ContentPage
+    public partial class JenisMotor_Add : ContentPage
     {
-        public Category_Add()
+        public JenisMotor_Add()
         {
             InitializeComponent();
-            btnTambahKategori.Clicked += BtnTambahKategori_Clicked;
+            btnTambahJenisMotor.Clicked += BtnTambahJenisMotor_Clicked;
         }
 
         // Define Server
-        private RestClient _client =  new RestClient("http://zelfixbackend.azurewebsites.net/");
+        private RestClient _client = new RestClient("http://zelfixbackend.azurewebsites.net/");
 
         // Add Function
-        private async void BtnTambahKategori_Clicked(object sender, EventArgs e)
+        private async void BtnTambahJenisMotor_Clicked(object sender, EventArgs e)
         {
             //Define Request - POST
-            var _request = new RestRequest("api/Kategori", Method.POST);
-            
-            //Add New Kategori
-            var newKategori = new Kategori { NamaKategori = txtNamaKategori.Text};
+            var _request = new RestRequest("api/JenisMotor", Method.POST);
 
-            _request.AddBody(newKategori);
+            //Add New Kategori
+            var newJenisMotor = new JenisMotor { NamaMerk = txtNamaMerk.Text, NamaJenisMotor = txtNamaJenisMotor.Text };
+
+            _request.AddBody(newJenisMotor);
             try
             {
                 var _response = await _client.Execute(_request);
                 if (_response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                   await Navigation.PushAsync(new MainKategori());
+                    await Navigation.PushAsync(new MainJenisMotor());
                 }
-             }
-            catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 await DisplayAlert("Error", "Error : " + ex.Message, "OK");
             }
         }
-
     }
 }

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinClientApp.Views.Barang_Add">
+  <ScrollView>
+   <StackLayout>
+      <!-- Input - NamaBarang -->
+      <Label Text="Nama Barang :"/>
+      <Entry x:Name="txtNamaBarang" Placeholder="Nama Barang"/>
+      <!-- Input - HargaBarang -->
+      <Label Text="Harga :"/>
+      <Entry x:Name="txtHargaBarang" Placeholder="Harga Barang"/>
+      <!-- Input - StokBarang -->
+      <Label Text="Stok :"/>
+      <Entry x:Name="txtStokBarang" Placeholder="Jumlah Stok"/>
+      <!-- Input - TglBeli -->
+      <Label Text="Tanggal Beli :"/>
+      <Entry x:Name="txtTglBeli" Placeholder="Tanggal Pembeian"/>
+      <!-- Input - IdKategori -->
+      <Label Text="Kategori:"/>
+      <Entry x:Name="txtIdKategori" Placeholder="ID Kategori"/>
+      <!-- Input - IdJenisMotor -->
+      <Label Text="Jenis Motor:"/>
+      <Entry x:Name="txtIdJenisMotor" Placeholder="ID Jenis Motor"/>
+      <!-- Submit -->
+      <Button x:Name="btnTambahBarang" Text="Tambah" />
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

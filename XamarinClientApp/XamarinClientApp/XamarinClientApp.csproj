@@ -40,8 +40,16 @@
     <Compile Include="Models\JenisMotor.cs" />
     <Compile Include="ViewModels\JenisMotorViewModel.cs" />
     <Compile Include="ViewModels\BarangViewModel.cs" />
+    <Compile Include="ViewModels\SearchNamaBarang.cs" />
+    <Compile Include="ViewModels\SearchNamaKategori.cs" />
     <Compile Include="Views\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Barang_Add.xaml.cs">
+      <DependentUpon>Barang_Add.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Barang_Edit.xaml.cs">
+      <DependentUpon>Barang_Edit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Category_Add.xaml.cs">
       <DependentUpon>Category_Add.xaml</DependentUpon>
@@ -49,8 +57,11 @@
     <Compile Include="Views\Category_Edit.xaml.cs">
       <DependentUpon>Category_Edit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\DetailBarang.xaml.cs">
-      <DependentUpon>DetailBarang.xaml</DependentUpon>
+    <Compile Include="Views\JenisMotor_Add.xaml.cs">
+      <DependentUpon>JenisMotor_Add.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JenisMotor_Edit.xaml.cs">
+      <DependentUpon>JenisMotor_Edit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainBarang.xaml.cs">
       <DependentUpon>MainBarang.xaml</DependentUpon>
@@ -192,7 +203,25 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\DetailBarang.xaml">
+    <EmbeddedResource Include="Views\Barang_Add.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\JenisMotor_Add.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Barang_Edit.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\JenisMotor_Edit.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

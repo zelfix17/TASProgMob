@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using XamarinClientApp.Views;
 
 namespace XamarinClientApp
 {
@@ -12,7 +13,6 @@ namespace XamarinClientApp
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
       
         }

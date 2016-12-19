@@ -9,33 +9,38 @@ using XamarinClientApp.Models;
 using RestSharp.Portable;
 using RestSharp.Portable.HttpClient;
 
-namespace XamarinClientApp
+namespace XamarinClientApp.Views
 {
-    public partial class Category_Edit : ContentPage
+    public partial class Barang_Edit : ContentPage
     {
-        public Category_Edit()
+        public Barang_Edit()
         {
             InitializeComponent();
-            btnEdit.Clicked += BtnEditKategori_Clicked;
-            btnDelete.Clicked += BtnDeleteKategori_Clicked;
+            btnEdit.Clicked += BtnEditBarang_Clicked;
+            btnDelete.Clicked += BtnDeleteBarang_Clicked;
         }
 
         // Define Server
         private RestClient _client = new RestClient("http://zelfixbackend.azurewebsites.net/");
 
         // Add Function
-        private async void BtnEditKategori_Clicked(object sender, EventArgs e)
+        private async void BtnEditBarang_Clicked(object sender, EventArgs e)
         {
             //Define Request - PUT
-            var _request = new RestRequest("api/Kategori", Method.PUT);
+            var _request = new RestRequest("api/Barang", Method.PUT);
             //Add New Kategori
-            var newKategori = new Kategori
+            var newBarang = new Barang
             {
+                IdBarang = Convert.ToInt32(txtIdBarang.Text),
+                NamaBarang = txtNamaBarang.Text,
+                HargaBarang = Convert.ToInt32(txtHargaBarang.Text),
+                StokBarang = Convert.ToInt32(txtStokBarang.Text),
+                TglBeli = Convert.ToDateTime(txtTglBeli.Text),
                 IdKategori = Convert.ToInt32(txtIdKategori.Text),
-                NamaKategori = txtNamaKategori.Text
+                IdJenisMotor = Convert.ToInt32(txtIdJenisMotor.Text)
             };
             //Execute
-            _request.AddBody(newKategori);
+            _request.AddBody(newBarang);
             try
             {
                 var _response = await _client.Execute(_request);
@@ -50,12 +55,12 @@ namespace XamarinClientApp
             }
         }
 
-        private async void BtnDeleteKategori_Clicked(object sender, EventArgs e)
+        private async void BtnDeleteBarang_Clicked(object sender, EventArgs e)
         {
             //Define Request - Delete
-            var _request = new RestRequest("api/Kategori/{id}", Method.DELETE);
+            var _request = new RestRequest("api/Barang/{id}", Method.DELETE);
             //Execute
-            _request.AddParameter("id", txtIdKategori.Text);
+            _request.AddParameter("id", txtIdBarang.Text);
             try
             {
                 var _response = await _client.Execute(_request);
@@ -69,8 +74,5 @@ namespace XamarinClientApp
                 await DisplayAlert("Error", "Error : " + ex.Message, "OK");
             }
         }
-
-        
-
     }
 }

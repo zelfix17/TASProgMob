@@ -24,9 +24,9 @@ namespace XamarinClientApp
             // Here you can define title for item, 
             // icon on the left side, and page that you want to open after selection
             var page1 = new MasterPageItem() { Title = "HOME", Icon = "home.png", TargetType = typeof(MainPageDetail) };
-            var page2 = new MasterPageItem() { Title = "Barang", TargetType = typeof(MainBarang) };
-            var page3 = new MasterPageItem() { Title = "Jenis Motor", TargetType = typeof(MainJenisMotor) };
-            var page4 = new MasterPageItem() { Title = "Kategori", TargetType = typeof(MainKategori) };
+            var page2 = new MasterPageItem() { Title = "Create Barang", TargetType = typeof(Barang_Add) };
+            var page3 = new MasterPageItem() { Title = "Create Jenis Motor", TargetType = typeof(JenisMotor_Add) };
+            var page4 = new MasterPageItem() { Title = "Create Kategori", TargetType = typeof(Category_Add) };
         
 
             // Adding menu items to menuList

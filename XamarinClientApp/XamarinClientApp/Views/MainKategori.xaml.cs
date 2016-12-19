@@ -27,5 +27,10 @@ namespace XamarinClientApp
             Navigation.PushAsync(editPage);
         }
 
+        protected override void OnAppearing()
+        {
+            this.BindingContext = new KategoriViewModel();
+        }
+
     }
 }

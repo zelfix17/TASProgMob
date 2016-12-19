@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using XamarinClientApp.ViewModels;
 using XamarinClientApp.Models;
+using XamarinClientApp.Views;
 
 namespace XamarinClientApp
 {
@@ -22,10 +23,15 @@ namespace XamarinClientApp
         private void ListJenisMotor_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             JenisMotor item = (JenisMotor)e.Item;
-            //Category_Edit editPage = new Category_Edit();
-            //editPage.BindingContext = item;
-            //Navigation.PushAsync(editPage);
+            JenisMotor_Edit editPage = new JenisMotor_Edit();
+            editPage.BindingContext = item;
+            Navigation.PushAsync(editPage);
         }
 
+
+        protected override void OnAppearing()
+        {
+            this.BindingContext = new JenisMotorViewModel();
+        }
     }
 }

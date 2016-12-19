@@ -9,30 +9,31 @@ using XamarinClientApp.Models;
 using RestSharp.Portable;
 using RestSharp.Portable.HttpClient;
 
-namespace XamarinClientApp
+namespace XamarinClientApp.Views
 {
-    public partial class Category_Edit : ContentPage
+    public partial class JenisMotor_Edit : ContentPage
     {
-        public Category_Edit()
+        public JenisMotor_Edit()
         {
             InitializeComponent();
-            btnEdit.Clicked += BtnEditKategori_Clicked;
-            btnDelete.Clicked += BtnDeleteKategori_Clicked;
+            btnEdit.Clicked += BtnEditJenisMotor_Clicked;
+            btnDelete.Clicked += BtnDeleteJenisMotor_Clicked;
         }
 
         // Define Server
         private RestClient _client = new RestClient("http://zelfixbackend.azurewebsites.net/");
 
         // Add Function
-        private async void BtnEditKategori_Clicked(object sender, EventArgs e)
+        private async void BtnEditJenisMotor_Clicked(object sender, EventArgs e)
         {
             //Define Request - PUT
-            var _request = new RestRequest("api/Kategori", Method.PUT);
+            var _request = new RestRequest("api/JenisMotor", Method.PUT);
             //Add New Kategori
-            var newKategori = new Kategori
+            var newKategori = new JenisMotor
             {
-                IdKategori = Convert.ToInt32(txtIdKategori.Text),
-                NamaKategori = txtNamaKategori.Text
+                IdJenisMotor = Convert.ToInt32(txtIdJenisMotor.Text),
+                NamaMerk = txtNamaMerk.Text,
+                NamaJenisMotor = txtNamaJenisMotor.Text
             };
             //Execute
             _request.AddBody(newKategori);
@@ -50,12 +51,12 @@ namespace XamarinClientApp
             }
         }
 
-        private async void BtnDeleteKategori_Clicked(object sender, EventArgs e)
+        private async void BtnDeleteJenisMotor_Clicked(object sender, EventArgs e)
         {
             //Define Request - Delete
-            var _request = new RestRequest("api/Kategori/{id}", Method.DELETE);
+            var _request = new RestRequest("api/JenisMotor/{id}", Method.DELETE);
             //Execute
-            _request.AddParameter("id", txtIdKategori.Text);
+            _request.AddParameter("id", txtIdJenisMotor.Text);
             try
             {
                 var _response = await _client.Execute(_request);
@@ -69,8 +70,6 @@ namespace XamarinClientApp
                 await DisplayAlert("Error", "Error : " + ex.Message, "OK");
             }
         }
-
-        
-
     }
+    
 }

@@ -20,15 +20,15 @@
         <ColumnDefinition Width="150"/>
       </Grid.ColumnDefinitions>
       <!-- Grid - Body -->
-      <Image Source="RadiantSwordLogo.png" HeightRequest="200"
+      <Image Source="home.png" HeightRequest="200"
               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-      <Button Text="View" x:Name="btnViewKategori"
+      <Button Text="View Barang" x:Name="btnViewBarang"
               Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
               FontFamily="Arial" FontAttributes="Bold" FontSize="20"/>
-      <Button Text="Add" x:Name="btnViewBarang"
+      <Button Text="Kategori" x:Name="btnViewKategori"
               Grid.Row="3" Grid.Column="0"
               FontFamily="Arial" FontAttributes="Bold" FontSize="20"/>
-      <Button Text="Edit" x:Name="btnViewJenisMotor"
+      <Button Text="Jenis Motor" x:Name="btnViewJenisMotor"
               Grid.Row="3" Grid.Column="1"
               FontFamily="Arial" FontAttributes="Bold" FontSize="20"/>
     </Grid>

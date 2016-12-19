@@ -5,10 +5,23 @@
              Title="List Barang">
 
   <StackLayout>
+    <StackLayout>
+      <!--<SearchBar Placeholder="Search" HeightRequest="70"
+                 BackgroundColor="#2c3e50" TextColor="White" PlaceholderColor="White"/>-->
+      
+        <!--<Label Text="Barang/Kategori"/>
+        <Switch x:Name="switcher" HorizontalOptions="End" VerticalOptions="CenterAndExpand" />-->
+
+      <Entry x:Name="txtSearch" Placeholder="Search Something Here..."/>
+      <StackLayout Orientation="Horizontal">
+      <Button x:Name="btnSearchBarang" Text="by Nama Barang"/>  
+      <Button x:Name="btnSearchKategori" Text="by Nama Kategori"/>
+      </StackLayout>
+    </StackLayout>
     <ListView x:Name="listBarang" ItemsSource="{Binding ListBarang}">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell Text="{Binding IdBarang}"
+          <TextCell Text="{Binding IdBarang, StringFormat='ID : {0}'}"
                     Detail="{Binding NamaBarang}" DetailColor="Red" />
         </DataTemplate>
       </ListView.ItemTemplate>
